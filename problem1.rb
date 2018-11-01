@@ -1,54 +1,9 @@
-class Rover
-    attr_accessor :x, :y, :direction
-    def initialize(x, y, direction)
-      @x = x
-      @y = y
-      @direction = direction      
-    end
-    def move(path)
-      i = 0
-      while i < path.length()
-        case path[i]
-          when "L"
-            if @direction == "N"
-              @direction = "W"
-            elsif @direction == "S"
-              @direction = "E"
-            elsif @direction == "E"
-              @direction = "N"  
-            elsif @direction == "W"
-              @direction = "S"
-            end    
-          when "M"
-            if @direction == "N"
-              @y = @y+1
-            elsif @direction == "S"
-              @y = @y-1
-            elsif @direction == "E"
-              @x = @x+1 
-            elsif @direction == "W"
-              @x = @x-1
-            end   
-          when "R"
-            if @direction == "N"
-              @direction = "W"
-            elsif @direction == "S"
-              @direction = "E"
-            elsif @direction == "E"
-              @direction = "N"  
-            elsif @direction == "W"
-              @direction = "S"
-            end       
-        end    
-         i+=1
-      end
-    end
-    def display()
-      puts(@x.to_s+" "+@y.to_s+" "+@direction)
-    end        
-end
+require_relative "Rover.rb"
+require_relative "Plateau.rb"
 
-top_corners = gets().split()
+bottom_corner = [0,0]
+top_corner = gets().split()
+plateau = Plateau.new(bottom_corner, top_corner)
 
 rovers = Array.new()
 j = 0
@@ -56,7 +11,7 @@ while(rover = gets.split())
   if(rover[0] == "exit")
     break
   else
-    rovers[j] = Rover.new(rover[0].to_i, rover[1].to_i, rover[2])
+    rovers[j] = Rover.new(rover[0].to_i, rover[1].to_i, rover[2],plateau)
   end
   path = gets.chomp()
   rovers[j].move(path)
