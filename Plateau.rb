@@ -2,9 +2,8 @@ class Plateau
     attr_accessor :top_corner, :bottom_corner
     def initialize(bottom_corner, top_corner)
         @top_corner = top_corner
-        puts @top_corner
         @bottom_corner = bottom_corner
-        puts @bottom_corner
+        
     end
 
     def checkBoundry(value,axis)
