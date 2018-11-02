@@ -13,7 +13,7 @@ class Rover
       next_state = Next.new()
       while i < path.length()
         if path[i] == "M"
-           new_coordinate = next_state.move(@coordinate, @direction)
+           new_coordinate = next_state.move(@coordinate, @direction, @plateau)
            @coordinate = new_coordinate
         elsif ( path[i] == "L" or path[i] == "R" )
            new_direction = next_state.turn(@direction, path[i])
