@@ -38,3 +38,7 @@ end
 def get_processed_array(array1, array2)
   array1 - array2
 end  
+
+def get_hash(array)
+  Hash[array.collect { |first,second| [first,second]}]
+end

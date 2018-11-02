@@ -72,7 +72,7 @@ describe "should return an array with elemnets that are only in array1 and not i
     array2 = [1,2]
     expect(get_processed_array(array1,array2)).to eql([])
   end
-  it "should return an first array elements as no element is there in array2" do
+  it "should return first array elements as no element is there in array2" do
     array1 = [1,2,3,4]
     array2 = [5,6,7,8]
     expect(get_processed_array(array1, array2)).to eql([1,2,3,4])
@@ -81,5 +81,16 @@ describe "should return an array with elemnets that are only in array1 and not i
     array1 = [1,2,3,4]
     array2 = [2,4,5,6]
     expect(get_processed_array(array1,array2)).to eql([1,3])
+  end
+end
+
+describe "create a hash out of array of arrays" do
+  it "should return an empty hash if the array of arrays is empty" do
+    array = []
+    expect(get_hash(array)).to eql({})
+  end
+  it "should return an hash with sub-array elements as key value pairs" do
+    array = [['will smith', 'i am legend'], ['brad pitt', 'fight club'], ['frodo', 'the hobbit']]
+    expect(get_hash(array)).to eql({"will smith" => "i am legend", "brad pitt" => "fight club", "frodo" => "the hobbit"})
   end
 end
