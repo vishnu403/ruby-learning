@@ -4,10 +4,10 @@ class Problem1
     @array = array    
   end
   def get_biggie
-    @array.each do |ele|
-      if ele == "biggie"
-        return ele
-      end 
+    if(@array.include?("biggie"))
+      return "biggie"
+    else
+      return nil      
     end    
   end    
 end    

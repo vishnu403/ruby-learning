@@ -6,6 +6,11 @@ describe Problem1 do
       arr = ['hello', 'biggie', 'zomato']  
       array = Problem1.new(arr)   
       expect(array.get_biggie()).to eql("biggie")
-    end    
+    end
+    it "should return nil " do 
+      arr = ['hello', 'kings', 'zomato']
+      array = Problem1.new(arr)
+      expect(array.get_biggie()).to eql(nil)
+    end      
   end  
 end    
