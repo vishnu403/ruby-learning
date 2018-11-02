@@ -25,4 +25,9 @@ def get_player_lastname(players)
     new_players.push(second)
   end
   return new_players  
-end    
+end
+
+def get_combined_array(array1, array2)
+  new_array = array1.product(array2)
+  return new_array
+end  

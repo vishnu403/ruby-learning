@@ -31,4 +31,12 @@ describe "get players last name" do
       players = [['r', 'kelly'], ['50', 'cent'], ['miley', 'cyrus']]
       expect(get_player_lastname(players)).to eql(["kelly","cent","cyrus"])
   end
-end        
+end 
+
+describe "get combination of two arrays" do
+  it "should return an array of arrays" do
+    nums = [1, 2, 3]
+    letters = ['a', 'b', 'c']
+    expect(get_combined_array(nums, letters)).to eql([[1, "a"], [1, "b"], [1, "c"], [2, "a"], [2, "b"], [2, "c"], [3, "a"], [3, "b"], [3, "c"]])
+  end
+end    
