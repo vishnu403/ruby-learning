@@ -19,15 +19,22 @@ def get_sl_no(array)
   return array  
 end      
 
-def get_player_lastname(players)
-  new_players = Array.new()  
-  players.map do |first,second|
-    new_players.push(second)
-  end
-  return new_players  
+def get_player_lastname(players) 
+  players.collect {|first, last| last}
 end
 
 def get_combined_array(array1, array2)
-  new_array = array1.product(array2)
-  return new_array
+  array1.product(array2)
+end
+
+def get_sum(array)
+  array.sum()
+end 
+
+def get_union(array1, array2)
+  array1 | array2
+end
+
+def get_processed_array(array1, array2)
+  array1 - array2
 end  
