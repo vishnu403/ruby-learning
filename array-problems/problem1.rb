@@ -46,3 +46,9 @@ end
 def get_even_elements(array)
   array.select { |x| x % 2 == 0 }
 end
+
+def get_consecutive_nos(array)
+  array.slice_when do |prev, curr|
+   curr != prev.next
+  end.to_a
+end

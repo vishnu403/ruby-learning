@@ -109,3 +109,14 @@ describe "filter all the even numbers from the given array" do
     expect(get_even_elements(array)).to eql([])
   end
 end
+
+describe "club consecutive numbers together in an array" do
+  it "should return an empty array if the passed array is empty" do
+    array = []
+    expect(get_consecutive_nos(array)).to eql([])
+  end
+  it "should return an array of subarrays containing consecutive elements" do
+    array = [1,2,3,5,6,9,10,2,3,4]
+    expect(get_consecutive_nos(array)).to eql([[1, 2, 3], [5, 6], [9, 10], [2, 3, 4]])
+  end
+end
