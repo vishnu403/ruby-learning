@@ -94,3 +94,18 @@ describe "create a hash out of array of arrays" do
     expect(get_hash(array)).to eql({"will smith" => "i am legend", "brad pitt" => "fight club", "frodo" => "the hobbit"})
   end
 end
+
+describe "filter all the even numbers from the given array" do 
+  it "should return an empty array as supplied array is empty" do
+    array = []
+    expect(get_even_elements(array)).to eql([])
+  end
+  it "should return an array of even elemenets only" do
+    array = [1,2,3,4,5]
+    expect(get_even_elements(array)).to eql([2,4])
+  end
+  it "should return an empty array as all elements are odd" do
+    array = [1,3,5,7,9]
+    expect(get_even_elements(array)).to eql([])
+  end
+end

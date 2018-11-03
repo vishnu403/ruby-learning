@@ -42,3 +42,7 @@ end
 def get_hash(array)
   Hash[array.collect { |first,second| [first,second]}]
 end
+
+def get_even_elements(array)
+  array.select { |x| x % 2 == 0 }
+end
